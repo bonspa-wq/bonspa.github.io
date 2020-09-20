@@ -16,6 +16,15 @@
   }
 }
 
+div.vertical-line{
+    width: 1px; /* Line width */
+    background-color: rgb(72, 76, 83); /* Line color */
+    height: 90%; /* Override in-line if you want specific height. */
+    float: left; /* Causes the line to float to left of content.
+      You can instead use position:absolute or display:inline-block
+      if this fits better with your design */
+  }
+
 /*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
 /* Document
        ========================================================================== */
@@ -50,7 +59,6 @@ body {
      */
 article,
 aside,
-footer,
 header,
 nav,
 section {
@@ -67,17 +75,19 @@ h1 {
 /**
      * Add the correct display in IE 9-.
      */
+    /*
 figcaption,
 figure {
   display: block;
 }
-
+*/
 /**
      * Add the correct margin in IE 8.
      */
+     /*
 figure {
   margin: 1em 40px;
-}
+}*/
 
 /**
      * 1. Add the correct box sizing in Firefox.
@@ -248,64 +258,6 @@ overflow: hidden;
 * 1. Change the font styles in all browsers (opinionated).
 * 2. Remove the margin in Firefox and Safari.
 */
-button,
-input,
-optgroup,
-select,
-textarea {
-font-family: sans-serif;
-/* 1 */
-font-size: 100%;
-/* 1 */
-line-height: 1.15;
-/* 1 */
-margin: 0;
-/* 2 */
-}
-
-/**
-* Show the overflow in IE.
-*/
-button {
-overflow: visible;
-}
-
-/**
-* Remove the inheritance of text transform in Edge, Firefox, and IE.
-* 1. Remove the inheritance of text transform in Firefox.
-*/
-button,
-select {
-/* 1 */
-text-transform: none;
-}
-
-/**
-* 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
-*    controls in Android 4.
-* 2. Correct the inability to style clickable types in iOS and Safari.
-*/
-button,
-html [type="button"],
-[type="reset"],
-[type="submit"] {
--webkit-appearance: button;
-/* 2 */
-}
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-border-style: none;
-padding: 0;
-}
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-outline: 1px dotted ButtonText;
-}
-
 /**
 * Show the overflow in Edge.
 */
@@ -975,7 +927,7 @@ textarea {
 .top-bar-title {
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  margin: 0.5rem 1rem 0.5rem 0;
+  margin: 0.0rem 0rem 0.0rem 0;
 }
 
 .top-bar-left,
@@ -1038,10 +990,10 @@ textarea {
 .top-bar-title {
   display: inline-block;
   float: left;
-  padding: 0.5rem 1rem 0.5rem 0;
+  padding: 0.0rem 0rem 0.0rem 0;
 }
 .top-bar-title .menu-icon {
-  bottom: 2px;
+  bottom: 0px;
 }
 
 .top-bar-left {
@@ -1155,7 +1107,7 @@ textarea {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  margin: 0.5rem 1rem 0.5rem 0;
+  margin: 0.0rem 0rem 0.0rem 0;
 }
 
 .top-bar-left,
@@ -1198,13 +1150,13 @@ textarea {
 
 .top-bar .top-bar-title {
   margin: 0 1rem 0 0;
-  height: 50px;
+  height: 85px;
 }
 
 .top-bar-title .brand {
   width: auto;
-  height: 50px;
-  line-height: 50px;
+  height: 20px;
+  line-height: 20px;
   display: block;
   font-size: 1.25rem;
 }
@@ -1212,15 +1164,15 @@ textarea {
 
 .top-bar-title .brand img {
   width: auto;
-  height: 40px;
+  height: 80px;
   float: left;
-  margin: 5px 0.5rem 5px 0;
+  margin: 0px 0.0rem 0px 0;
 }
 
 .top-bar > .container > .menu-holder > .menu > li > a {
   width: auto;
-  height: 50px;
-  line-height: 50px;
+  height: 20px;
+  line-height: 20px;
   display: inline-block;
   padding: 0 30px;
   transition: all 0.5s ease-in-out;
@@ -1267,7 +1219,8 @@ textarea {
 
 /*aqui se hace transparente la barra de navegacion*/
 .top-bar {
-  background-color: transparent;
+  background-color: rgba(170, 168, 191, 0.15);
+  /*background-color: rgba(37, 60, 120, 0.15);*/
 }
 .top-bar .menu {
   background-color: inherit;
@@ -1287,7 +1240,7 @@ textarea {
 }
 
 .top-bar > .container > .menu-holder > .menu.mobile {
-  background-color: #fafafa;
+  background-color: #253c78;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.18);
 }
 
@@ -1352,7 +1305,8 @@ textarea {
 
 /*Aqui se define el borde*/
 .top-bar.active {
-  background-color: #b02c58;
+  /*background-color: #0e0e2e;  background-color: #1B4079;*/
+  background-color: #253c78;
   box-shadow: 0 2px 2px 0 rgba(9, 8, 8, 0.14), 0 1px 5px 0 rgba(9, 8, 8, 0.14),
     0 3px 1px -2px rgba(9, 8, 8, 0.14);
 }
@@ -1465,8 +1419,13 @@ main {
   text-align: center;
 }
 
-
-
+.menu.vertical {
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+/*
 .page-footer {
   padding: 8.75rem 0 2.5rem;
   background-position: center;
@@ -1530,15 +1489,16 @@ main {
     content: "\f1f9";
 }
 
-
+*/
 
 /*Aqui pongo lo que faltaba de la hoja 4*/
 
 
 .section {
   position: relative;
-  padding: 140px 0 100px;
+  padding: 100px 0 100px;
   background-position: center;
+  background-color: #2d3036;
   background-size: cover;
 }
 
@@ -1550,7 +1510,28 @@ main {
   min-height: 500px;
 }
 
+.section.with-cut-top:before,
+.section.with-cut-bottom:after {
+  content: "";
+  left: 0;
+  width: 0;
+  height: 0;
+  display: block;
+  position: absolute;
+  z-index: 1;
+}
 
+.section.with-cut-top:before {
+  top: -80px;
+  border-top: 80px solid transparent;
+  border-right: 30px solid;
+}
+
+.section.with-cut-bottom:after {
+  bottom: -80px;
+  border-bottom: 80px solid transparent;
+  border-left: 30px solid;
+}
 /*
 .section .title {
   font-size: 1.75rem;
